@@ -5,3 +5,5 @@ ruff
 black
 pytest
 transformers
+librosa
+opencv-python-headless

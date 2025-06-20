@@ -3,7 +3,7 @@ import requests
 import json
 import time
 
-API_URL = "http://localhost:8000/score/audio"  # change port if needed
+API_URL = "http://localhost:8000/score/audio"
 
 def encode_audio_to_base64(file_path):
     with open(file_path, "rb") as f:
@@ -18,12 +18,13 @@ def test_audio_clip(path, label):
 
     if response.status_code == 200:
         print(f"\n✅ {label} CLIP RESULT:")
-        data = response.json()
-        print(json.dumps(data, indent=2))
+        print(json.dumps(response.json(), indent=2))
         print(f"Client-side elapsed: {elapsed} ms")
     else:
         print(f"\n❌ Error ({label}):", response.status_code, response.text)
 
-# Test both clips
-test_audio_clip("samples/3s_clip.wav", "3-second")
-test_audio_clip("samples/5s_clip.wav", "5-second")
+if __name__ == "__main__":
+    # Test both clips only when run as a script:
+    test_audio_clip("samples/3s_clip.wav", "3-second")
+    test_audio_clip("samples/5s_clip.wav", "5-second")
+

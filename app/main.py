@@ -16,6 +16,7 @@ app.include_router(text.router)
 
 # Register the router with the app
 app.include_router(status.router)
+app.include_router(text.router, prefix="/score", tags=["text"])
 
 
 # Root endpoint for basic info

@@ -1,5 +1,9 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.types import *
+from pyspark.sql.types import (
+    StructType, StructField,
+    StringType, IntegerType, TimestampType,
+    ArrayType, FloatType, BooleanType
+)
 from datetime import datetime
 from pyspark.sql import Row
 
@@ -32,7 +36,6 @@ schema = StructType([
 ])
 
 
-from pyspark.sql import Row
 sample = Row(
     id="text_001",
     modality="text",

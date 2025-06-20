@@ -6,10 +6,13 @@ import numpy as np
 import base64
 import io
 import soundfile as sf
+from datetime import datetime
+import time
+import hashlib
 
 app = FastAPI()
 
-session = ort.InferenceSession("models/v1/text_model.onnx")
+audio_session = ort.InferenceSession("models/v1/text_model.onnx")
 
 label_map = [
     "admiration", "amusement", "anger", "annoyance", "approval", "caring",

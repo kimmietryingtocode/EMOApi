@@ -32,7 +32,6 @@ schema = StructType([
 ])
 
 
-from pyspark.sql import Row
 sample = Row(
     id="text_001",
     modality="text",
